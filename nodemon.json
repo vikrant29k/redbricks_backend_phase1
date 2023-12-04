@@ -1,0 +1,14 @@
+{
+    "env": {
+        "AUTH_TOKEN_SECRET": "sdfkajsdfwf384*&^*^",
+        "MONGODB_URI": "mongodb://localhost:27017/Redbricks",
+        "NODEMAILER_SERVICE": "gmail",
+        "NODEMAILER_AUTH_USER": "redbriksrepo@gmail.com",
+        "NODEMAILER_AUTH_PASSWORD": "lkjdlhfxbasiewtb",
+        "NODE_ENV": "development"
+    },
+    "ignore": [
+        "uploads/*",
+        "assets/*"
+    ]
+}
