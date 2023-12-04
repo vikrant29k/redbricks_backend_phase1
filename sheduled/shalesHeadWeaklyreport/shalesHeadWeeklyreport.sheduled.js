@@ -9,7 +9,7 @@ const path = require('path');
 
 
 // const salesHeadWeeklyReport = cron.schedule('0 8 * * */Monday', () => {
-const salesHeadWeeklyReport = cron.schedule('*/1 * * * *', () => {
+const salesHeadWeeklyReport = cron.schedule('0 8 * * 1', () => {
     let date = new Date().toDateString();
     date = new Date(date);
     let lastWeekDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 6);
