@@ -1,7 +1,7 @@
 const Proposal = require('../../../models/proposal/proposal.model');
 const ProposalLog = require('../../../models/proposal-log/proposal-log.model');
 const Location = require('../../../models/location/location.model');
-
+const LogController = require("../../../controllers/log/main.log.controller")
 const deleteProposal = async (req, res, next) => {
   const proposalId = req.params.Id;
 
@@ -46,6 +46,7 @@ const deleteProposal = async (req, res, next) => {
             { proposalId: proposalId },
             { $set: { logMessage: 'Deleted' } }
           );
+          LogController.proposal.update(proposal._id, { logMessage: 'Proposal Deleted'})
 
           if (!resp || resp == null) {
             let err = new Error('Error while updating Log');

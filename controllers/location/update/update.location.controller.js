@@ -131,6 +131,7 @@ const { json } = require("express");
 const updateLocationData = (req, res, next) => {
     Id = req.params.Id;
     let data = req.body;
+    // console.log(data)
     let jsonUpdated = false;
     let layoutImageUpdated = false;
     try {

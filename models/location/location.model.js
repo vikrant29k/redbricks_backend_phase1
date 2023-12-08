@@ -65,7 +65,13 @@ const locationModel = new Schema({
     rentAndCamTotal:{
         type:Number
     },
+    percentageforRentCam:{
+        type:Number
+    },
     carParkCharge:{
+        type: Number
+    },
+    bikeParkCharge:{
         type: Number
     },
     futureRackRate:{

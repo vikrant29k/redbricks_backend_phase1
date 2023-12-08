@@ -1,5 +1,6 @@
 const Proposal = require("../../../models/proposal/proposal.model");
 const Location = require("../../../models/location/location.model");
+const LogController = require("../../../controllers/log/main.log.controller")
 getRandomColor =() => {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -21,7 +22,8 @@ const lockProposal = (req, res, next) => {
             Proposal.findById(Id).then((proposal) => {
    
                 Proposal.updateOne({ _id: proposal._id }, { $set: { status: 'Completed and Locked', lockedProposal: true,color: getRandomColor() } }).then((updateResult) => {
-        
+                    LogController.proposal.update(proposal._id, { logMessage: 'Proposal Locked'})
+
                     if (updateResult.acknowledged && updateResult.modifiedCount > 0) {
                         Location.findOne({ location: proposal.location, center: proposal.center }).then((locationdata) => {
             

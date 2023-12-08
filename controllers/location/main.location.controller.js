@@ -13,7 +13,7 @@ const addLayoutData = require('./addLayouts/add-layout.location.controller');
 const getBorderDataById = require("./getBorderData/getBorderData.location.controller");
 const getCenterImages = require('./getCenterImages/getCenterImages.location.controller');
 const deleteImage = require('./images/deleteImage.location.controller')
-
+const recalculate = require('./recalculateTheSeatPrice/recalculate.controller')
 const locationController = {
     create: createLocation,
     addLayout:addLayoutData,
@@ -29,7 +29,8 @@ const locationController = {
     getImage:getImageById,
     getBorder:getBorderDataById,
     getCenterImages:getCenterImages,
-    deleteImage:deleteImage
+    deleteImage:deleteImage,
+    recalculate:recalculate
 }
 
 module.exports = locationController;

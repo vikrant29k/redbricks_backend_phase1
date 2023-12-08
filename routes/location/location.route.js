@@ -117,4 +117,6 @@ locationRoute.get('/getCenterImages/:Id', locationController.getCenterImages);
 
 locationRoute.post('/deleteImg/:Id', locationController.deleteImage);
 
+locationRoute.post('/recalculate',locationController.recalculate)
+
 module.exports = locationRoute;
